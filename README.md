@@ -20,6 +20,8 @@
 ```lisp
 
 
+
+
 (defun insert-right-to-left (value sorted-list)
   (cond
     ((null sorted-list) (list value))
@@ -71,19 +73,16 @@
  (test-sorting)
 
 (defun check-insertion-sort-functional (name input expected)
-  "Execute `insertion-sort-functional` on `input`, compare result with `expected`, and print comparison status."
   (format t "~:[FAILED~;passed~]... ~a~%"
           (equal (insertion-sort-functional input) expected)
           name))
 
 (defun check-insertion-sort-imperative (name input expected)
-  "Execute `insertion-sort-imperative` on `input`, compare result with `expected`, and print comparison status."
   (format t "~:[FAILED~;passed~]... ~a~%"
           (equal (insertion-sort-imperative input) expected)
           name))
 
 (defun test-insertion-sort-functional ()
-  "Run test cases for `insertion-sort-functional`."
   (check-insertion-sort-functional "Functional Test 1" '(3 1 4 1 5 9) '(1 1 3 4 5 9))
   (check-insertion-sort-functional "Functional Test 2" '(9 7 5 3 1) '(1 3 5 7 9))
   (check-insertion-sort-functional "Functional Test 3" '(1 2 3 4 5) '(1 2 3 4 5))
@@ -91,7 +90,6 @@
   (check-insertion-sort-functional "Functional Test 5" '(1) '(1)))
 
 (defun test-insertion-sort-imperative ()
-  "Run test cases for `insertion-sort-imperative`."
   (check-insertion-sort-imperative "Imperative Test 1" '(3 1 4 1 5 9) '(1 1 3 4 5 9))
   (check-insertion-sort-imperative "Imperative Test 2" '(9 7 5 3 1) '(1 3 5 7 9))
   (check-insertion-sort-imperative "Imperative Test 3" '(1 2 3 4 5) '(1 2 3 4 5))
@@ -100,6 +98,7 @@
 
 (test-insertion-sort-functional)
 (test-insertion-sort-imperative)
+
 
 ```
 
